@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+
+# this is a simple container or pod specification for nginx pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+
+      ports:
+        - containerPort: 80
+
+      resources:
+        requests:
+          memory: "128Mi"
+          cpu: "250m"
+
+        limits:
+          memory: "256Mi"
+          cpu: "500m"
